@@ -159,7 +159,16 @@ const LeftMenu = () => {
   const isCollapsed = leftMenuWidth === UI_SETTING.leftMenuWidthCollapsed;
 
   useKeyPress(
-    Object.keys(mapShortcutToMenu),
+    e => {
+      const key = e.key === ' ' ? e.code : e.key.toUpperCase();
+      const normalizedKey =
+        key === 'SPACE'
+          ? 'Space'
+          : key === 'ESC' || key === 'ESCAPE'
+          ? 'Escape'
+          : key;
+      return Boolean(mapShortcutToMenu[normalizedKey]);
+    },
     e => {
       if (
         showModalType !== ModalType.None ||
@@ -170,10 +179,19 @@ const LeftMenu = () => {
         return;
       }
       const key = e.key === ' ' ? e.code : e.key.toUpperCase();
-      if (key === 'Space') {
+      const normalizedKey =
+        key === 'SPACE'
+          ? 'Space'
+          : key === 'ESC' || key === 'ESCAPE'
+          ? 'Escape'
+          : key;
+      if (normalizedKey === 'Space' || normalizedKey === 'Escape') {
         e.preventDefault();
       }
-      const catalog = mapShortcutToMenu[key] as CatalogType;
+      const catalog = mapShortcutToMenu[normalizedKey] as CatalogType;
+      if (!catalog) {
+        return;
+      }
       resetSubMenuOpened();
       if (catalog === CatalogType.Special && subMenuOpened[catalog]) {
         // 连按两次F，打开特殊建筑编辑窗口
@@ -181,7 +199,7 @@ const LeftMenu = () => {
         resetSubMenuOpened();
         return;
       }
-      if (subMenuContent[catalog].length === 0) {
+      if (subMenuContent[catalog]?.length === 0) {
         openedSubMenu.current = undefined;
         onClickMenuItem(catalog);
         return;
@@ -383,6 +401,8 @@ const LeftMenu = () => {
                         <Kbd>
                           {mapMenuToShortcut[catalog] === 'Space'
                             ? '⎵'
+                            : mapMenuToShortcut[catalog] === 'Escape'
+                            ? 'Esc'
                             : mapMenuToShortcut[catalog]}
                         </Kbd>
                       </div>

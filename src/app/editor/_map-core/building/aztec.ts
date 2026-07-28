@@ -1,8 +1,8 @@
 import { BuildingColor } from './color';
 
 export const BuildingAztec = {
-  防: ['哨', '维', '医院'],
-  防护: ['哨塔', '维修站点', '医院'],
+  防: ['哨', '维', '医院', '巫'],
+  防护: ['哨塔', '维修站点', '巫医帐篷', '医院'],
   普通住宅需求: {
     商业: ['粮店', '蔬菜摊', '水果摊', '肉铺', '鱼摊', '陶器店', '可可店', '布匹轩'],
     市政: ['水井'],
@@ -235,6 +235,13 @@ export const BuildingAztec = {
       background: BuildingColor['市政']['防'],
     },
     {
+      name: '巫医帐篷',
+      text: '巫',
+      size: 1,
+      range: 5,
+      background: BuildingColor['市政']['防'],
+    },
+    {
       name: '医院',
       text: '医院',
       size: 2,
@@ -265,7 +272,7 @@ export const BuildingAztec = {
     {
       name: '贸易站',
       text: '贸易站',
-      size: 3,
+      size: 2,
       range: 0,
       background: BuildingColor['市政']['贸'],
     },
