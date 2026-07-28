@@ -20,7 +20,10 @@ const TopMenu = () => {
       }}
     >
       <Tooltip content={`v${VERSION}`}>
-        <div className={styles.title}>模拟帝国布局图编辑器</div>
+        <div className={styles['title-wrap']}>
+          <div className={styles.title}>模拟帝国布局图编辑器</div>
+          <div className={styles.subtitle}>新版本维护by LSteven</div>
+        </div>
       </Tooltip>
       <TopMenuController />
       <TopMenuOperation />

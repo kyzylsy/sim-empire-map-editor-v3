@@ -11,7 +11,19 @@
   background-color: var(--color-bg-2);
 }
 
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .title {
   font-size: 18px;
   font-weight: bold;
+}
+
+.subtitle {
+  font-size: 10px;
+  color: gray;
+  text-align: center;
 }

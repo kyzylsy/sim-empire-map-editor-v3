@@ -47,6 +47,10 @@ const Copyright: FC<CopyrightProps> = props => {
         <span>Implemented by</span>
         <strong>Glutamine525</strong>
       </div>
+      <div className={styles.author}>
+        <span>Maintenance‌ by</span>
+        <strong>LSteven</strong>
+      </div>
       <div className={styles['web-link']}>
         <div>
           <span>Github:</span>
@@ -54,21 +58,7 @@ const Copyright: FC<CopyrightProps> = props => {
             onClick={() => {
               window.open(GITHUB_LINK);
             }}>
-            Glutamine525/sim-empire-map-editor-v3
-          </strong>
-        </div>
-        <div>
-          <span>网页链接:</span>
-          <strong
-            onClick={() => {
-              const success = copy(WEB_LINK);
-              if (success) {
-                Message.success({ id: 'copy', content: '成功复制到剪贴板' });
-              } else {
-                Message.error({ id: 'copy', content: '复制失败' });
-              }
-            }}>
-            simempire.fun
+            kyzylsy/sim-empire-map-editor-v3
           </strong>
         </div>
       </div>

@@ -15,7 +15,7 @@ export const UI_SETTING = {
 };
 
 export const GITHUB_LINK =
-  'https://github.com/Glutamine525/sim-empire-map-editor-v3';
+  'https://github.com/kyzylsy/sim-empire-map-editor-v3';
 
 export const WEB_LINK = 'https://www.simempire.fun';
 
