@@ -63,14 +63,14 @@ export const BuildingAztec = {
     {
       name: '可可园',
       text: '可可园',
-      size: 2,
+      size: 3,
       range: 0,
       background: BuildingColor['农业'][4],
     },
     {
       name: '制羽小屋',
       text: '制羽小屋',
-      size: 4,
+      size: 2,
       range: 0,
       background: BuildingColor['农业'][5],
     },
